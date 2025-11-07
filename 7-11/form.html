@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <h1>Form example</h1>
+    <form action="mailto:ginojitus@hotmail.com">
+      <fieldset>
+        <legend>Informazioni personali</legend>
+        <label for="name">Il tuo nome</label>
+        <input type="text" required/>
+        <br />
+        <label for="email">La tua mail</label>
+        <input type="email" required />
+        <br />
+        <label for="eta">La tua età</label>
+        <input type="number" required />
+        <br />
+      </fieldset>
+      <fieldset>
+        <legend>Contatti</legend>
+        <label for="message">Il tuo messaggio</label>
+        <textarea name="messagge" placeholder="lascia un commento" required></textarea>
+        <br />
+        <label for="date">Data d'invio</label>
+        <input type="date" required />
+        <br />
+        <label for="attachment">File allegato</label>
+        <input type="file">
+      </fieldset>
+      <input type="submit" />
+    </form>
+  </body>
+</html>

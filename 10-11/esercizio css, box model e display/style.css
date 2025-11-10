@@ -1,3 +1,7 @@
+body {
+  height: 5000px;
+  width: auto;
+}
 nav ul {
   padding: 0;
   margin: 0;
@@ -57,3 +61,19 @@ p {
   height: 100%;
   box-sizing: border-box;
 }
+
+.sidebar {
+  width: 150px;
+  height: 150px;
+  border: 2px solid red;
+  background-color: lightblue;
+  text-align: center;
+  overflow: scroll;
+}
+.sticky {
+  position: sticky;
+  top: 0;
+  background: yellow;
+}
+
+

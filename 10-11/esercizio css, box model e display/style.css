@@ -64,16 +64,14 @@ p {
 
 .sidebar {
   width: 150px;
-  height: 150px;
+  height: auto;
   border: 2px solid red;
   background-color: lightblue;
   text-align: center;
-  overflow: scroll;
 }
 .sticky {
   position: sticky;
   top: 0;
   background: yellow;
+  padding: 10px;
 }
-
-

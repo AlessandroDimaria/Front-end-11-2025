@@ -4,24 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>test</title>
-    <style>
-    li {
-        color: red;
-    }
-    a{
-        color: blue;
-    }
-    </style>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <header id="top">
-      <h1 style="color: aqua; font-size: 34px;">Titolo</h1>
+      <h1 style="color: aqua; font-size: 34px">Titolo</h1>
       <nav>
         <ul>
           <li><a href="#blog">Blog</a></li>
           <li><a href="#bio">Bio</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li style="color: blueviolet;"><a href="./services.html" target="_blank">Servizi</a></li>
+          <li style="color: blueviolet">
+            <a href="./services.html" target="_blank">Servizi</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -133,14 +128,23 @@
           eius. Natus.
         </p>
       </section>
-      <section>
-        <h2>contatti</h2>
-        <p>Email:pescosannit@hotmail.it</p>
-        <p>Telefono:3452321235</p>
+      <section id="contatti">
+        <h2 id="titolo-contatti">Contattaci</h2>
+        <p id="email-contatto">
+          <strong>Email:</strong>
+          <a href="mailto:info@example.com">info@example.com</a>
+        </p>
+        <p id="telefono-contatto">
+          <strong>Telefono:</strong>
+          <a href="tel:+390123456789">+39 012 345 6789</a>
+        </p>
+        <p id="indirizzo-contatto">
+          <strong>Indirizzo:</strong> Via Roma 123, Palermo
+        </p>
       </section>
     </main>
     <footer>
-<p>©2011 Autore contenuto. Design by Designer sito </p>
+      <p>©2011 Autore contenuto. Design by Designer sito</p>
     </footer>
     <a href="#top"><button>torna su</button></a>
   </body>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lezione 1 Js</h1>
+    <script>
+        console.log('Hello, World!');
+        console.error('This is an error message.');
+        console.warn('This is a warning message.');
+        let nome = 'Mario';
+        let cognome = 'Rossi';
+        let eta = 25;
+        console.log("Mi chiamo " + nome + " " + cognome + " e ho " + eta + " anni.");
+        console.log("ciao come stai " + nome + " " + cognome + " ?");
+        //boolean
+        let isStudent = true;
+        let isFemale = false;
+        console.log("Sono uno studente: " + isStudent);
+        console.log("Sono una donna: " + isFemale); 
+        //null e undefined
+        let niente = null;
+        let indefinito;
+        console.log("niente intenzionale: " + niente);
+        console.log("indefinito non intenzionale: " + indefinito);
+        console.log(typeof nome); //string
+        console.log(typeof eta); //number
+        console.log(typeof isStudent); //boolean
+        console.log(typeof niente); //object (this is a known quirk in JavaScript)
+        console.log(typeof indefinito); //undefined
+        let array = [1, 2, 3, 4, 5];
+        console.log(typeof array); //object
+        let oggetto = {nome: "Mario", cognome: "Rossi", eta: 25};
+        console.log(typeof oggetto); //object
+        console.log(typeof indefinito); //undefined
+        //operatori aritmetiche
+        let somma = 10+5;
+        console.log("Somma: " + somma);
+        let frazione = 10/3;
+        console.log("Frazione: " + frazione);
+        let resto = 10 % 3;
+        console.log("Resto: " + resto);
+        let moltiplicazione = 4 * 5;
+        console.log("Moltiplicazione: " + moltiplicazione);
+        let potenza = 2 ** 3;
+        console.log("Potenza: " + potenza);
+        //operatori di assegnazione
+        let x = 10;
+        x += 5; // x = x + 5
+        x *= 2; // x = x * 2
+        x = x++; // x = x + 1
+        console.log("x dopo += 5: " + x);
+        //operatori di confronto
+        console.log("10 == '10': " + (10 == '10')); //true
+        console.log("10 === '10': " + (10 === '10')); //false
+        console.log("10 != '10': " + (10 != '10')); //false
+        console.log("10 !== '10': " + (10 !== '10')); //true
+        //condizionali
+        let a = 18;
+        if (a >= 18) {
+            console.log(a + " è maggiorenne");
+        } else {
+            console.log(a + " é minorenne");
+        }
+        let voto = 16;
+        if (voto >= 18) {
+            console.log("Promosso");
+        } else if (voto >= 14) {
+            console.log("Recupero");
+        } else {
+            console.log("Bocciato");
+        }
+        //cicli for
+        for (let i = 0; i < 5; i++) {
+            console.log("Ciclo for: " + i);
+        }
+        //cicli while
+        let b = 0;
+        while (b < 20) {
+            console.log("Ciclo while: " + b);
+            b++;
+        }
+        //funzioni
+        function saluta(nome) {
+        console.log("Ciao " + nome + "!");
+        }
+        saluta("Luca");
+        //funzione con ritorno
+        function sommaDueNumeri(num1, num2) {
+            return num1 + num2;
+        }
+        let risultato = sommaDueNumeri(5, 7);
+        console.log("risultato", risultato);
+    </script>
+</body>
+</html>

@@ -23,12 +23,19 @@ console.log(messaggio);
 const nuovoUtente = creaUtente(nome, eta, professione);
 utenti.push(nuovoUtente);
 console.table(utenti);
-debugutenti();
-mostrautenti();
+debugUtenti();
+mostraUtenti();
+}
+function debugUtenti() {
+  for (const utente of utenti) {
+    for (const proprietà in utente) {
+      console.log(`${proprietà}: ${utente[proprietà]}`);
+    }
+  }
 }
 
-function creaUtente(nome, eta, professione = "Non specificato") {
 
+function creaUtente(nome, eta, professione = "Non specificato") {
 let categoria; {
     switch (professione.toLowerCase()) {
         case "insegnante":
@@ -49,4 +56,15 @@ let categoria; {
 }
 return { nome, eta, professione, categoria };
 }
-
+const generaMessaggio = utente =>
+  `${utente.nome} ha ${utente.eta} anni ed è classificato come ${utente.categoria}`;
+function mostraUtenti() {
+  const lista = document.getElementById("lista");
+  lista.innerHTML = "";
+  for (const utente of utenti) {
+    const scheda = document.createElement("div");
+    scheda.className = "scheda";
+    scheda.innerHTML = `<p>${generaMessaggio(utente)}</p>`;
+    lista.appendChild(scheda);
+  }
+}

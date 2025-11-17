@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Generatore Schede utente</title>
+<style>
+    body { font-family: Arial; padding: 20px; }
+    .scheda { margin-bottom: 10px; padding: 10px; border: 1px solid #ccc; }
+    .errore { color: red; font-size: 0.9em; }
+  </style>
 </head>
 <body>
 <h1> Utenti</h1>
@@ -11,6 +16,7 @@
 <input id="eta" type="number" placeholder="Età" />
 <input id="professione" placeholder="Professione" />
 <button id="btnAggiungi">Aggiungi utente</button>
+<button id="btnFiltra">Filtra maggiorenni</button>
 <h2>Lista Utenti</h2>
 <div id="lista"></div>
 <script src="script.js"></script>

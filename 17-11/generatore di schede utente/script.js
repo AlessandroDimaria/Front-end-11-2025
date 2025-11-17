@@ -1,5 +1,6 @@
 let utenti = [];
 document.getElementById("btnAggiungi").onclick = aggiungiUtente;
+document.getElementById("btnFiltra").onclick = () => mostraFiltro(utenti.filter(u => u.eta >= 18));
 function aggiungiUtente() {
     const nome = document.getElementById('nome').value.trim();
     const eta = parseInt(document.getElementById('eta').value);
@@ -34,7 +35,6 @@ function debugUtenti() {
   }
 }
 
-
 function creaUtente(nome, eta, professione = "Non specificato") {
 let categoria; {
     switch (professione.toLowerCase()) {
@@ -57,11 +57,22 @@ let categoria; {
 return { nome, eta, professione, categoria };
 }
 const generaMessaggio = utente =>
-  `${utente.nome} ha ${utente.eta} anni ed è classificato come ${utente.categoria}`;
+  `${utente.nome} ha ${utente.eta} anni, lavora come ${utente.professione} ed é nel settore ${utente.categoria}.`;
 function mostraUtenti() {
   const lista = document.getElementById("lista");
   lista.innerHTML = "";
   for (const utente of utenti) {
+    const scheda = document.createElement("div");
+    scheda.className = "scheda";
+    scheda.innerHTML = `<p>${generaMessaggio(utente)}</p>`;
+    lista.appendChild(scheda);
+  }
+}
+function mostraFiltro(listaFiltrata) {
+  const lista = document.getElementById("lista");
+  lista.innerHTML = "";
+
+  for (const utente of listaFiltrata) {
     const scheda = document.createElement("div");
     scheda.className = "scheda";
     scheda.innerHTML = `<p>${generaMessaggio(utente)}</p>`;

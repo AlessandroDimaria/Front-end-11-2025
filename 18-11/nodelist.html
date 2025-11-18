@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodelist</title>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <script>
+        let collection = document.getElementsByClassName('box');
+        let Nodelist = document.querySelectorAll('.box');
+        let newdiv = document.createElement('div');
+        newdiv.className = 'box';
+        document.body.appendChild(newdiv);
+        console.log(collection.length);
+        console.log(Nodelist.length);
+    </script>
+</body>
+</html>

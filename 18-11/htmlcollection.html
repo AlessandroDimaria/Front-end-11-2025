@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HtmlCollection</title>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" name="username" value="Mario">
+        <input type="text" name="password" value="12345">
+        <input type="email" name="email" value="mario.rossi@example.com">
+    </form>
+    <script>
+        const form = document.getElementById('myForm');
+        console.log(form);
+        const campi = form.elements;
+        console.log(campi);
+        console.log(campi.username.value);
+        console.log(campi.password.value);
+        console.log(campi.email.value);
+    </script>
+</body>
+</html>

@@ -9,6 +9,7 @@
     <h1>Benvenuto</h1>
     <input type="text" placeholder="Digita qualcosa" />
     <button>Aggiungi</button>
+    <button id="empty">Svuota Lista</button>
     <p id="messaggio">Nessuna Attività Inserita</p>
     <ul class="lista"></ul>
     <script>
@@ -24,6 +25,7 @@
         buttonRemove.classList.add("rimuovi");
         buttonRemove.addEventListener("click", function () {
           newElement.remove();
+          updateMessage();
         });
         newElement.addEventListener("click", function () {
           newElement.classList.toggle("completata");
@@ -36,12 +38,17 @@
         function updateMessage() {
           const dataInput = document.querySelectorAll("li");
           const message = document.getElementById("messaggio");
-          if (dataInput.length = 0) {
+          if (dataInput.length == 0) {
           message.textContent = "Nessuna attività inserita";
          } else {
          message.textContent = "";
         }
         }
+        const emptyList = document.getElementById("empty")
+        emptyList.addEventListener("click", function(){
+            list.innerHTML="";
+            updateMessage();
+        })
         newElement.appendChild(buttonRemove);
         list.appendChild(newElement);
         content.value = "";

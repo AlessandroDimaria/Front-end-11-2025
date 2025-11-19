@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index</title>
+  </head>
+  <body>
+    <h1>Benvenuto</h1>
+    <input type="text" placeholder="Digita qualcosa" />
+    <button>Aggiungi</button>
+    <ul class="lista"></ul>
+    <script>
+      const content = document.querySelector("input");
+      const Add = document.querySelector("button");
+      const list = document.querySelector(".lista");
+      Add.addEventListener("click", function () {
+        const newElement = document.createElement("li");
+        newElement.textContent = content.value;
+        newElement.style.cssText= "cursor: pointer";
+        const buttonRemove = document.createElement("button");
+        buttonRemove.textContent = "X";
+        buttonRemove.classList.add("rimuovi");
+        buttonRemove.addEventListener("click", function () {
+          newElement.remove();
+        });
+        newElement.addEventListener("click", function () {
+          newElement.classList.toggle("completata");
+          newElement.style.cssText = "color: gray; text-decoration:line-through";
+        });
+        newElement.ondblclick = function(){
+            newElement.classList.toggle("evidenziata");
+            newElement.style.cssText = "background-color: orange"; 
+            };
+        newElement.appendChild(buttonRemove);
+        list.appendChild(newElement);
+        content.value = "";
+      });
+    </script>
+  </body>
+</html>

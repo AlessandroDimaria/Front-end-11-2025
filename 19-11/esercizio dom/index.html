@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index</title>
+    <style>
+  .nascosto {
+    display: none;
+  }
+</style>
+
   </head>
   <body>
     <h1>Benvenuto</h1>
@@ -12,10 +18,31 @@
     <button id="empty">Svuota Lista</button>
     <p id="messaggio">Nessuna Attività Inserita</p>
     <ul class="lista"></ul>
+    <select id="filtro">
+    <option value="all">Mostra tutto</option>
+    <option value="added">Mostra solo completati</option>
+</select>
     <script>
       const content = document.querySelector("input");
       const Add = document.querySelector("button");
       const list = document.querySelector(".lista");
+      const filter = document.getElementById("filtro");
+      filter.addEventListener("change", function(){
+        const elements = document.querySelectorAll("li");
+        const value = filter.value;
+        for (let i = 0; i<elements.length; i++){
+            const li = elements[i];
+            if (value === "added"){
+                if (li.classList.contains("completa")) {
+        li.classList.remove("nascosto");
+      } else {
+        li.classList.add("nascosto");
+      }
+    } else {
+      li.classList.remove("nascosto");
+    }
+  }
+      });
       Add.addEventListener("click", function () {
         const newElement = document.createElement("li");
         newElement.textContent = content.value;

@@ -9,6 +9,7 @@
     <h1>Benvenuto</h1>
     <input type="text" placeholder="Digita qualcosa" />
     <button>Aggiungi</button>
+    <p id="messaggio">Nessuna Attività Inserita</p>
     <ul class="lista"></ul>
     <script>
       const content = document.querySelector("input");
@@ -17,7 +18,7 @@
       Add.addEventListener("click", function () {
         const newElement = document.createElement("li");
         newElement.textContent = content.value;
-        newElement.style.cssText= "cursor: pointer";
+        newElement.style.cssText = "cursor: pointer";
         const buttonRemove = document.createElement("button");
         buttonRemove.textContent = "X";
         buttonRemove.classList.add("rimuovi");
@@ -26,15 +27,25 @@
         });
         newElement.addEventListener("click", function () {
           newElement.classList.toggle("completata");
-          newElement.style.cssText = "color: gray; text-decoration:line-through";
+          newElement.style.cssText ="color: gray; text-decoration:line-through";
         });
-        newElement.ondblclick = function(){
-            newElement.classList.toggle("evidenziata");
-            newElement.style.cssText = "background-color: orange"; 
-            };
+        newElement.ondblclick = function () {
+          newElement.classList.toggle("evidenziata");
+          newElement.style.cssText = "background-color: orange";
+        };
+        function updateMessage() {
+          const dataInput = document.querySelectorAll("li");
+          const message = document.getElementById("messaggio");
+          if (dataInput.length = 0) {
+          message.textContent = "Nessuna attività inserita";
+         } else {
+         message.textContent = "";
+        }
+        }
         newElement.appendChild(buttonRemove);
         list.appendChild(newElement);
         content.value = "";
+        updateMessage();
       });
     </script>
   </body>

@@ -23,6 +23,10 @@
         const buttonRemove = document.createElement("button");
         buttonRemove.textContent = "X";
         buttonRemove.classList.add("rimuovi");
+       if (content.value.trim() === "") {
+       updateMessage(); 
+       return;
+       }
         buttonRemove.addEventListener("click", function () {
           newElement.remove();
           updateMessage();
@@ -39,7 +43,7 @@
           const dataInput = document.querySelectorAll("li");
           const message = document.getElementById("messaggio");
           if (dataInput.length == 0) {
-          message.textContent = "Nessuna attività inserita";
+          message.textContent = "Nessuna Attività Inserita";
          } else {
          message.textContent = "";
         }

@@ -20,7 +20,7 @@
     <ul class="lista"></ul>
     <select id="filtro">
     <option value="all">Mostra tutto</option>
-    <option value="added">Mostra solo completati</option>
+    <option value="completata">Mostra solo completati</option>
 </select>
     <script>
       const content = document.querySelector("input");
@@ -32,8 +32,8 @@
         const value = filter.value;
         for (let i = 0; i<elements.length; i++){
             const li = elements[i];
-            if (value === "added"){
-                if (li.classList.contains("completa")) {
+            if (value === "completata"){
+                if (li.classList.contains("completata")) {
         li.classList.remove("nascosto");
       } else {
         li.classList.add("nascosto");

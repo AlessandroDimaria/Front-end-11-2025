@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sommaVariabile(...nums) {
+        let somma = 0;
+        for (let n of nums) {
+          somma += n;
+        }
+        return somma;
+      }
+      let totale1 = sommaVariabile(5, 2, 10);
+      console.log(totale1);
+      let numeri = [5, 10, 15];
+      let totale2 = sommaVariabile(...numeri);
+      console.log(totale2);
+    </script>
+  </body>
+</html>

@@ -10,13 +10,11 @@
       function concatenaSep(sep, ...pezzi) {
         return pezzi.join(sep);
       }
-      // Con argomenti individuali
       let risultato1 = concatenaSep(" - ", "pane", "latte", "uova");
-      console.log(risultato1); // "pane - latte - uova"
-      // Con array espanso
+      console.log(risultato1);
       let lista = ["vino", "formaggio", "frutta"];
       let risultato2 = concatenaSep(", ", ...lista);
-      console.log(risultato2); // "vino, formaggio, frutta"
+      console.log(risultato2);
     </script>
   </body>
 </html>

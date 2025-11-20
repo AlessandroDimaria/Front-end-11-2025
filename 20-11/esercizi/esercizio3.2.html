@@ -7,10 +7,11 @@
   </head>
   <body>
     <script>
-      const info = ["Luca", 28, "CTO", "Milano", "Italia"];
-      const [nome, , ruolo] = info;
-      console.log(nome); // "Luca"
-      console.log(ruolo); // "CTO"
+      const user = { username: "cli_user", role: "editor" };
+      const { username: nick, role, active = false } = user;
+      console.log(nick);
+      console.log(role);
+      console.log(active); 
     </script>
   </body>
 </html>

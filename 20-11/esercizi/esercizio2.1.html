@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let spese = [80, 120, 45, 150];
+      let risultati = [];
+      for (let spesa of spese) {
+        let risultato = spesa >= 100 ? "sconto" : "nessuno";
+        risultati.push(risultato);
+      }
+      console.log(risultati);
+    </script>
+  </body>
+</html>

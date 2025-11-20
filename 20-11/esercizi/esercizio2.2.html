@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function concatenaSep(sep, ...pezzi) {
+        return pezzi.join(sep);
+      }
+      // Con argomenti individuali
+      let risultato1 = concatenaSep(" - ", "pane", "latte", "uova");
+      console.log(risultato1); // "pane - latte - uova"
+      // Con array espanso
+      let lista = ["vino", "formaggio", "frutta"];
+      let risultato2 = concatenaSep(", ", ...lista);
+      console.log(risultato2); // "vino, formaggio, frutta"
+    </script>
+  </body>
+</html>

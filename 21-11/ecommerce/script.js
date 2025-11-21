@@ -62,10 +62,17 @@ function addToCart(productId) {
   } else {
     cart.push({ productId, quantity: 1 });
   }
+      document.getElementById("cart").style.display = "block";
   updateCart();
   updateTotal();
 }
 
+document.getElementById("clear-cart").addEventListener("click", () => {
+  cart = [];
+  updateCart();
+  updateTotal();
+  document.getElementById("cart").style.display = "none"; // torna nascosto
+});
 // Aggiorna carrello
 function updateCart() {
   const cartItems = document.getElementById("cart-items");

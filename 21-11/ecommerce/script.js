@@ -49,7 +49,7 @@ function showCatalog() {
   // Eventi pulsanti "Add to Cart"
   document.querySelectorAll(".product button").forEach(button => {
     button.addEventListener("click", () => {
-      addToCart(button.dataset.id); // ✅ ID come stringa
+      addToCart(button.dataset.id); 
     });
   });
 }
@@ -57,12 +57,8 @@ function showCatalog() {
 // Aggiungi al carrello
 function addToCart(productId) {
   const item = cart.find(p => p.productId === productId);
-  if (item) {
-    item.quantity++;
-  } else {
-    cart.push({ productId, quantity: 1 });
-  }
-      document.getElementById("cart").style.display = "block";
+  item ? item.quantity++ : cart.push({ productId, quantity: 1 });
+  document.getElementById("cart").style.display = "block";
   updateCart();
   updateTotal();
 }

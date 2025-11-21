@@ -36,7 +36,6 @@ let cart = [];
 // Mostra catalogo
 function showCatalog() {
   const productList = document.getElementById("product-list");
-
   productList.innerHTML = productCatalog.map(product => `
     <div class="product">
       <img src="${product.imageUrl}" alt="${product.name}">
@@ -69,16 +68,15 @@ document.getElementById("clear-cart").addEventListener("click", () => {
   updateTotal();
   document.getElementById("cart").style.display = "none"; 
 });
+
 // Aggiorna carrello
 function updateCart() {
   const cartItems = document.getElementById("cart-items");
   cartItems.innerHTML = "";
-
   if (cart.length === 0) {
     cartItems.textContent = "Cart is empty";
     return;
   }
-
   cartItems.innerHTML = cart.map(item => {
     const product = productCatalog.find(p => p.id === item.productId);
     const subtotal = product.price * item.quantity;

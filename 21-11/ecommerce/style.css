@@ -59,10 +59,10 @@ h2 {
 .product img {
   height: 140px;
   width: 100%;
-  object-fit: contain; /* mostra tutta l'immagine */
+  object-fit: contain; 
   border-radius: 6px;
   margin-bottom: 10px;
-  background: #fff; /* sfondo neutro per eventuali spazi vuoti */
+  background: #fff; 
 }
 
 .product h3 {
@@ -107,7 +107,7 @@ button:hover {
   border-radius: 10px;
   background: #fff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  z-index: 1000; /* sopra gli altri elementi */
+  z-index: 1000; 
 }
 
 .cart-item {

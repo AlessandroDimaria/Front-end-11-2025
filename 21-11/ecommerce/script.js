@@ -71,7 +71,7 @@ document.getElementById("clear-cart").addEventListener("click", () => {
   cart = [];
   updateCart();
   updateTotal();
-  document.getElementById("cart").style.display = "none"; // torna nascosto
+  document.getElementById("cart").style.display = "none"; 
 });
 // Aggiorna carrello
 function updateCart() {

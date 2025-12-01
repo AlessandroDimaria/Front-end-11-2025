@@ -1,6 +1,6 @@
-import useForm from "./useForm";
+import useForm from "../hooks/useForm";
 import "./formStyle.css";
-import Validation from "./Validation";
+import Validation from "../utils/Validation";
 
 export default function Form() {
   const { values, errors, handleChange, handleSubmit } = useForm(

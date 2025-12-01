@@ -1,4 +1,5 @@
 import useForm from "./useForm";
+import "./formStyle.css";
 import Validation from "./Validation";
 
 export default function Form() {
@@ -53,7 +54,7 @@ export default function Form() {
       />
       {errors.password && <small style={{ color: "red" }}>{errors.password}</small>}
 
-      <button type="submit">Invia</button>
+      <button type="submit">Login</button>
     </form>
   );
 }

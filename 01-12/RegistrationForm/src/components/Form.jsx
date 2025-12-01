@@ -29,6 +29,7 @@ export default function Form(){
           <h2>Registrazione</h2>
           <label htmlFor="name">Nome</label>
           <input 
+          id="name"
           name="name"
           value={values.name}
           onChange={handleChange}
@@ -38,6 +39,7 @@ export default function Form(){
 
           <label htmlFor="surname">Cognome</label>
           <input 
+          id="surname"
           name="surname"
           value={values.surname}
           onChange={handleChange}
@@ -47,6 +49,8 @@ export default function Form(){
 
           <label htmlFor="email">Email</label>
           <input 
+          id="email"
+          type="email"
           name="email"
           value={values.email}
           onChange={handleChange}
@@ -56,6 +60,8 @@ export default function Form(){
 
           <label htmlFor="password">Password</label>
           <input 
+          id="password"
+          type="password"
           name="password"
           value={values.password}
           onChange={handleChange}

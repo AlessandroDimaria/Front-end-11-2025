@@ -12,11 +12,11 @@ if (!values.surname.trim()) {
 } else if (values.surname.trim().length < 3) {
   errors.surname = "Il cognome deve avere almeno 3 caratteri";
 }
-  if (!values.email) {
-    errors.email = "L'email è obbligatoria";
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
-    errors.email = "Formato email non valido";
-  }
+    if (!values.email.trim()) {
+            errors.email = 'Email obbligatoria';
+        } else if (!values.email.includes('@')) {
+            errors.email = 'Email non valida';
+        }
 
   if (!values.password) {
     errors.password = "La password è obbligatoria";

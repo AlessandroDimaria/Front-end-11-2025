@@ -51,7 +51,7 @@ export default function Form(){
           value={values.email}
           onChange={handleChange}
           placeholder="mario.rossi@gmail.com"/>
-          {errors.mail && <small style={{ color: "red" }}>{errors.mail}</small>}
+          {errors.email && <small style={{ color: "red" }}>{errors.email}</small>}
 
 
           <label htmlFor="password">Password</label>

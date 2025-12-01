@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import  Validation  from "./Validation";  
 export default function Form(){
     const [values, setValues] = useState({
         name: "",
@@ -8,6 +8,8 @@ export default function Form(){
         password:""
     });
 
+    const [errors, setErrors] = useState({});
+    
     const handleChange =(e) =>{
         const{name, value} = e.target;
         setValues((prev) =>({...prev, [name]: value }));
@@ -15,7 +17,11 @@ export default function Form(){
 
     const handleSubmit = (e)=> {
         e.preventDefault();
-       alert(`Username inserito: ${values.name}`);
+       const ValidationErrors = Validation(values);
+       setErrors(ValidationErrors);
+       if (Object.keys(ValidationErrors).length === 0){
+        alert("Registrazione completata");
+       }
     };
 
     return(
@@ -27,6 +33,8 @@ export default function Form(){
           value={values.name}
           onChange={handleChange}
           placeholder="Mario"/>
+          {errors.name && <small style={{ color: "red" }}>{errors.name}</small>}
+
 
           <label htmlFor="surname">Cognome</label>
           <input 
@@ -34,6 +42,8 @@ export default function Form(){
           value={values.surname}
           onChange={handleChange}
           placeholder="Rossi" />
+          {errors.surname && <small style={{ color: "red" }}>{errors.surname}</small>}
+
 
           <label htmlFor="email">Email</label>
           <input 
@@ -41,6 +51,8 @@ export default function Form(){
           value={values.email}
           onChange={handleChange}
           placeholder="mario.rossi@gmail.com"/>
+          {errors.mail && <small style={{ color: "red" }}>{errors.mail}</small>}
+
 
           <label htmlFor="password">Password</label>
           <input 
@@ -48,5 +60,6 @@ export default function Form(){
           value={values.password}
           onChange={handleChange}
           placeholder="Almeno 6 caratteri"/>
+          {errors.password && <small style={{ color: "red" }}>{errors.password}</small>}
           <button type="submit">Invia</button>
 </form>)};

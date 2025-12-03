@@ -11,12 +11,18 @@ export default function UsersList(){
             .catch((err) => setError(err.message))
             .finally(() => setLoading(false));
     }, []);
+function formatAddress(address) {
+  const { street, suite, city, zipcode } = address;
+return `${street}, ${suite} — ${city} ${zipcode}`;
+;
+}
+
 
     return <div>
         {loading && "Caricamento in corso..."}
         {error && `Errore: ${error}`}
         {!loading && !error && users.map(user => {
-            return <p key={user.id}>{user.name}</p>;
+            return <p key={user.id}>{user.name} {user.email} {formatAddress(user.address)}</p>;
         })}
     </div>;
 }

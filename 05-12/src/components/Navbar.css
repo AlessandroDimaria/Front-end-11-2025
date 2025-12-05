@@ -1,0 +1,31 @@
+/* Stile generale della navbar */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background-color: #1e1e2f;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Link base */
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+/* Hover */
+nav a:hover {
+  color: #ffcc00;
+}
+
+/* Stato attivo gestito da NavLink */
+.active {
+  color: #ffcc00;
+  border-bottom: 2px solid #ffcc00;
+}
